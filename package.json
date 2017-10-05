@@ -1,0 +1,38 @@
+{
+  "name": "survey-emailer",
+  "version": "1.0.0",
+  "description": "Application to create survey campaigns for product feedback that are emailed to customers.",
+  "main": "index.js",
+  "engines": {
+    "node": "8.6.0",
+    "npm": "5.5.1"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kohded/survey-emailer.git"
+  },
+  "author": "Arnold Koh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kohded/survey-emailer/issues"
+  },
+  "homepage": "https://github.com/kohded/survey-emailer#readme",
+  "dependencies": {
+    "express": "^4.16.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "eslint": "^4.8.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.4.0"
+  }
+}
