@@ -24,10 +24,7 @@ module.exports = {
     'import',
   ],
   'rules': {
-    'react/jsx-filename-extension': [
-      'error', {
-        'extensions': ['.js', '.jsx'],
-      },
-    ],
+    'indent': ['error', 2, { 'MemberExpression': 0 }],
+    'react/jsx-filename-extension': ['error', { 'extensions': ['.js', '.jsx'] }],
   },
 };
