@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/kohded/survey-emailer#readme",
   "dependencies": {
+    "cookie-session": "^1.3.2",
     "express": "^4.16.1",
     "mongoose": "^4.12.0",
     "passport": "^0.4.0",
