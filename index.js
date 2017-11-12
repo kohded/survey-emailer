@@ -6,7 +6,7 @@ const keys = require('./config/keys');
 require('./models/users');
 require('./services/passport'); // Only require since nothing is being exported.
 
-mongoose.connect(keys.mongoURI);
+mongoose.connect(keys.mongoURI, { useMongoClient: true });
 
 const app = express();
 

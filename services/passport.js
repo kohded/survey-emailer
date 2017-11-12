@@ -11,9 +11,9 @@ passport.serializeUser((user, done) => {
 
 passport.deserializeUser((id, done) => {
   Users.findById(id)
-  .then((user) => {
-    done(null, user);
-  });
+    .then((user) => {
+      done(null, user);
+    });
 });
 
 passport.use(new GoogleStrategy({
@@ -21,16 +21,14 @@ passport.use(new GoogleStrategy({
   clientSecret: keys.googleClientSecret,
   callbackURL: '/auth/google/callback',
   proxy: true,
-}, (accessToken, refreshToken, profile, done) => {
+}, async (accessToken, refreshToken, profile, done) => {
   // Check if user exists.
-  Users.findOne({ googleID: profile.id })
-  .then((existingUser) => {
-    if (existingUser) {
-      done(null, existingUser);
-    } else {
-      new Users({ googleID: profile.id })
-      .save()
-      .then(user => done(null, user));
-    }
-  });
+  const existingUser = await Users.findOne({ googleID: profile.id });
+
+  if (existingUser) {
+    done(null, existingUser);
+  } else {
+    const user = await new Users({ googleID: profile.id }).save();
+    done(null, user);
+  }
 }));
